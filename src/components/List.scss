@@ -1,0 +1,45 @@
+.list {
+	margin-top: 1.6rem;
+
+	&__title {
+		color: white;
+		font-size: 2rem;
+		font-weight: 500;
+		margin-left: var(--space-width);
+	}
+
+	&__wrapper {
+		position: relative;
+		margin-top: 1.2rem;
+
+		& > .icon {
+			position: absolute;
+			top: 0;
+			bottom: 0;
+			z-index: 2;
+
+			width: 5rem;
+			height: 12rem;
+
+			font-size: 3rem;
+			color: white;
+			background: rgb(22, 22, 22, 0.5);
+			cursor: pointer;
+
+			&.left {
+				left: 0;
+			}
+
+			&.right {
+				right: 0;
+			}
+		}
+
+		& > .container {
+			display: flex;
+			width: max-content;
+			margin-left: 5rem;
+			transition: all 0.6s;
+		}
+	}
+}

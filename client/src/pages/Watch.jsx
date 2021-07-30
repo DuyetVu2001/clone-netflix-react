@@ -5,11 +5,10 @@ const Watch = () => {
 	return (
 		<div className="watch">
 			<div className="watch__back-btn">
-				<ArrowBackOutlined />
+				<ArrowBackOutlined className="icon"/>
 				<p>Home</p>
 			</div>
 			<video
-				className="video"
 				autoPlay
 				progress
 				controls

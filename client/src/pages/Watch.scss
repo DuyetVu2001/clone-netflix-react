@@ -5,6 +5,19 @@
 
 	&__back-btn {
 		position: absolute;
+		z-index: 1;
+		top: 1.2rem;
+		left: 1.2rem;
+
+		display: flex;
+		align-items: center;
+		font-size: 1.6rem;
+		cursor: pointer;
+
+		& > .icon {
+			font-size: 1.6rem;
+			margin-right: .4rem;
+		}
 	}
 
 	video {

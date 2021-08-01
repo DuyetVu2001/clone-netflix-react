@@ -1,0 +1,139 @@
+POST http://localhost:8800/api/auth/register
+Content-Type: application/json
+
+{
+  "email": "duyetvu4",
+  "username": "duyetvu4",
+  "password": "duyetvu"
+}
+
+###
+POST http://localhost:8800/api/auth/login
+Content-Type: application/json
+
+{
+  "email": "duyetvu",
+  "password": "duyetvu"
+}
+
+###
+PUT  http://localhost:8800/api/users/61065192ea30f25e3c38ef82
+Content-Type: application/json
+Token: Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6IjYxMDYzNTY4ZjEyMjVjNDc4MTVhYmZlYiIsImlzX2FkbWluIjp0cnVlLCJpYXQiOjE2Mjc4MDM2MzN9._WNFR2YQixmvdi83191ZCy85I7yf8e563-U_fcmbXpM
+
+{
+  "is_admin": true
+}
+
+###
+GET  http://localhost:8800/api/users/find/61063568f1225c47815abfeb
+Content-Type: application/json
+
+### find all
+GET  http://localhost:8800/api/users/
+Content-Type: application/json
+Token: Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6IjYxMDY1MTkyZWEzMGYyNWUzYzM4ZWY4MiIsImlzX2FkbWluIjp0cnVlLCJpYXQiOjE2Mjc4MDU3MzB9.ImMPHCSVMmr4ggbR8vZXMlNm9IMNVay9DuKTXFEmlmM
+
+{
+  "username": "duyetvu3"
+}
+
+###
+DELETE  http://localhost:8800/api/users/61063568f1225c47815abfeb
+Content-Type: application/json
+Token: Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6IjYxMDRlYzk0Mzg4ZDAyMzRmZjYxYjY2ZCIsImlzX2FkbWluIjpmYWxzZSwiaWF0IjoxNjI3NzQ3NzQyfQ.-IREd84ropGZzdbw4o68gh2FCPMpVJG8Gip0B9LuG20
+
+{
+  "username": "duyetvu3",
+  "password": "duyetvu"
+}
+
+###
+GET  http://localhost:8800/api/users/stats
+Content-Type: application/json
+Token: Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6IjYxMDRlYzk0Mzg4ZDAyMzRmZjYxYjY2ZCIsImlzX2FkbWluIjpmYWxzZSwiaWF0IjoxNjI3NzQ3NzQyfQ.-IREd84ropGZzdbw4o68gh2FCPMpVJG8Gip0B9LuG20
+
+
+###
+POST  http://localhost:8800/api/movies/
+Content-Type: application/json
+Token: Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6IjYxMDY1MTkyZWEzMGYyNWUzYzM4ZWY4MiIsImlzX2FkbWluIjp0cnVlLCJpYXQiOjE2Mjc4MDU3MzB9.ImMPHCSVMmr4ggbR8vZXMlNm9IMNVay9DuKTXFEmlmM
+
+{
+  "title": "One piece 10",
+  "desc": "xRmZjYxYjY2ZCIsImlzX2FkbWluIjpmYWxzZSwiaWF0IjoxNjI3NzQ3NzQy",
+  "genre": "anime",
+  "poster": "https://cdn.dribbble.com/users/735631/screenshots/9074150/media/5833aa388588c6cc417d8733b859ee90.png",
+  "title_img": "https://occ-0-1432-1433.1.nflxso.net/dnm/api/v6/LmEnxtiAuzezXBjYXPuDgfZ4zZQ/AAAABUZdeG1DrMstq-YKHZ-dA-cx2uQN_YbCYx7RABDk0y7F8ZK6nzgCz4bp5qJVgMizPbVpIvXrd4xMBQAuNe0xmuW2WjoeGMDn1cFO.webp?r=df1",
+  "thumbnail": "https://cdn.dribbble.com/users/735631/screenshots/9074150/media/5833aa388588c6cc417d8733b859ee90.png",
+  "trailer": "https://player.vimeo.com/external/468454040.sd.mp4?s=c1aea845bb155ae2844b140d0b2d4f9593f56e1f&profile_id=139&oauth2_token_id=57447761",
+  "video": "https://player.vimeo.com/external/468454040.sd.mp4?s=c1aea845bb155ae2844b140d0b2d4f9593f56e1f&profile_id=139&oauth2_token_id=57447761",
+  "release_year": "2021",
+  "age_limit": 16,
+  "is_series": true
+}
+
+###
+GET  http://localhost:8800/api/movies/find/610682ccc41ede8f7cbb7e65
+Content-Type: application/json
+Token: Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6IjYxMDY1MTkyZWEzMGYyNWUzYzM4ZWY4MiIsImlzX2FkbWluIjp0cnVlLCJpYXQiOjE2Mjc4MDU3MzB9.ImMPHCSVMmr4ggbR8vZXMlNm9IMNVay9DuKTXFEmlmM
+
+###
+GET  http://localhost:8800/api/movies/random?type=series
+Content-Type: application/json
+Token: Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6IjYxMDY1MTkyZWEzMGYyNWUzYzM4ZWY4MiIsImlzX2FkbWluIjp0cnVlLCJpYXQiOjE2Mjc4MDU3MzB9.ImMPHCSVMmr4ggbR8vZXMlNm9IMNVay9DuKTXFEmlmM
+
+###
+PUT  http://localhost:8800/api/movies/610682ccc41ede8f7cbb7e65
+Content-Type: application/json
+Token: Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6IjYxMDY1MTkyZWEzMGYyNWUzYzM4ZWY4MiIsImlzX2FkbWluIjp0cnVlLCJpYXQiOjE2Mjc4MDU3MzB9.ImMPHCSVMmr4ggbR8vZXMlNm9IMNVay9DuKTXFEmlmM
+
+{
+  "title": "One piece 10"
+}
+
+###
+DELETE  http://localhost:8800/api/movies/610681f7c41ede8f7cbb7e2c
+Content-Type: application/json
+Token: Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6IjYxMDY1MTkyZWEzMGYyNWUzYzM4ZWY4MiIsImlzX2FkbWluIjp0cnVlLCJpYXQiOjE2Mjc4MDU3MzB9.ImMPHCSVMmr4ggbR8vZXMlNm9IMNVay9DuKTXFEmlmM
+
+
+###
+GET  http://localhost:8800/api/movies/
+Content-Type: application/json
+Token: Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6IjYxMDY1MTkyZWEzMGYyNWUzYzM4ZWY4MiIsImlzX2FkbWluIjp0cnVlLCJpYXQiOjE2Mjc4MDU3MzB9.ImMPHCSVMmr4ggbR8vZXMlNm9IMNVay9DuKTXFEmlmM
+
+
+###
+POST  http://localhost:8800/api/lists/
+Content-Type: application/json
+Token: Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6IjYxMDY1MTkyZWEzMGYyNWUzYzM4ZWY4MiIsImlzX2FkbWluIjp0cnVlLCJpYXQiOjE2Mjc4MDU3MzB9.ImMPHCSVMmr4ggbR8vZXMlNm9IMNVay9DuKTXFEmlmM
+
+{
+  "title": "Hot series 4",
+  "type": "movie",
+  "genre": "action",
+  "content": [
+    "610682ccc41ede8f7cbb7e65",
+    "610682ccc41ede8f7cbb7e65",
+    "610682ccc41ede8f7cbb7e65",
+    "610682ccc41ede8f7cbb7e65",
+    "610682ccc41ede8f7cbb7e65",
+    "610682ccc41ede8f7cbb7e65",
+    "610682ccc41ede8f7cbb7e65",
+    "610682ccc41ede8f7cbb7e65",
+    "610682ccc41ede8f7cbb7e65",
+    "610682ccc41ede8f7cbb7e65"
+    ]
+}
+
+###
+GET  http://localhost:8800/api/lists/?genre=dramma&&
+Content-Type: application/json
+Token: Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6IjYxMDY1MTkyZWEzMGYyNWUzYzM4ZWY4MiIsImlzX2FkbWluIjp0cnVlLCJpYXQiOjE2Mjc4MDU3MzB9.ImMPHCSVMmr4ggbR8vZXMlNm9IMNVay9DuKTXFEmlmM
+
+
+###
+DELETE   http://localhost:8800/api/lists/610689b1734789a0f3b8b9b4
+Content-Type: application/json
+Token: Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6IjYxMDY1MTkyZWEzMGYyNWUzYzM4ZWY4MiIsImlzX2FkbWluIjp0cnVlLCJpYXQiOjE2Mjc4MDU3MzB9.ImMPHCSVMmr4ggbR8vZXMlNm9IMNVay9DuKTXFEmlmM

@@ -6,7 +6,7 @@ import { useRef } from 'react';
 import './List.scss';
 import ListItem from './ListItem';
 
-const List = () => {
+const List = ({ list }) => {
 	let slideNumber = useRef(0);
 	slideNumber = slideNumber.current;
 
@@ -28,10 +28,12 @@ const List = () => {
 		}
 	};
 
+	const { title, content } = list;
+
 	return (
 		<div className="list">
 			{/* Title */}
-			<span className="list__title">Continue to watch</span>
+			<span className="list__title">{title}</span>
 
 			<div className="list__wrapper">
 				{/* Arrow left */}
@@ -39,16 +41,9 @@ const List = () => {
 
 				{/* List item */}
 				<div className="container" ref={listRef}>
-					<ListItem index="0" />
-					<ListItem index="1" />
-					<ListItem index="2" />
-					<ListItem index="3" />
-					<ListItem index="4" />
-					<ListItem index="5" />
-					<ListItem index="6" />
-					<ListItem index="7" />
-					<ListItem index="8" />
-					<ListItem index="9" />
+					{content.map((item, index) => (
+						<ListItem key={index} item={item} />
+					))}
 				</div>
 
 				{/* Arrow right */}

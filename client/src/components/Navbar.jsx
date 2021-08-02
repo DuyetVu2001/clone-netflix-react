@@ -1,3 +1,4 @@
+import { Link } from 'react-router-dom';
 import { ArrowDropDown, Notifications, Search } from '@material-ui/icons';
 import { useState } from 'react';
 import './Navbar.scss';
@@ -5,12 +6,10 @@ import './Navbar.scss';
 function Navbar() {
 	const [isScrolled, setScrolled] = useState(false);
 
-	window.addEventListener('scroll', () => {
-		const yAxis = window.pageYOffset;
-
-		setScrolled(yAxis >= 32 ? true : false);
+	window.onscroll = () => {
+		setScrolled(window.pageYOffset >= 32 ? true : false);
 		return () => (window.onscroll = null);
-	});
+	};
 
 	return (
 		<nav className={isScrolled ? 'navbar navbar--scrolled' : 'navbar'}>
@@ -21,9 +20,15 @@ function Navbar() {
 						src="https://upload.wikimedia.org/wikipedia/commons/thumb/0/08/Netflix_2015_logo.svg/2560px-Netflix_2015_logo.svg.png"
 						alt="Netflix logo"
 					/>
-					<span>Homepage</span>
-					<span>Series</span>
-					<span>Movies</span>
+					<Link to="/" className="link">
+						<span>Homepage</span>
+					</Link>
+					<Link to="/series" className="link">
+						<span>Series</span>
+					</Link>
+					<Link to="/movies" className="link">
+						<span>Movies</span>
+					</Link>
 					<span>New and Popular</span>
 					<span>My List</span>
 				</div>

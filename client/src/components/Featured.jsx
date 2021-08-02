@@ -1,19 +1,42 @@
 import { InfoOutlined, PlayArrow } from '@material-ui/icons';
+import axios from 'axios';
+import { useEffect, useState } from 'react';
 import './Featured.scss';
+import { API_URL } from '../const';
 
 const Featured = ({ type }) => {
+	const [content, setContent] = useState({});
+
+	useEffect(() => {
+		const getRandomContent = async () => {
+			try {
+				const res = await axios.get(`${API_URL}/movies/random/?type=${type}`, {
+					headers: {
+						token:
+							'Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6IjYxMDY1MTkyZWEzMGYyNWUzYzM4ZWY4MiIsImlzX2FkbWluIjp0cnVlLCJpYXQiOjE2Mjc4MDU3MzB9.ImMPHCSVMmr4ggbR8vZXMlNm9IMNVay9DuKTXFEmlmM',
+					},
+				});
+
+				setContent(res.data.movie[0]);
+			} catch (error) {
+				console.error(error);
+			}
+		};
+
+		getRandomContent();
+	}, [type]);
+
+	const { poster, title_img, desc } = content;
+
 	return (
 		<div className="featured">
 			{/* Poster */}
-			<img
-				src="https://cdn.dribbble.com/users/735631/screenshots/9074150/media/5833aa388588c6cc417d8733b859ee90.png"
-				alt=""
-			/>
+			<img src={poster} alt="" />
 
 			{/* Category */}
 			{type && (
 				<div className="featured__category">
-					<span>{type === 'movies' ? 'Movies' : 'Series'}</span>
+					<span>{type === 'movie' ? 'Movies' : 'Series'}</span>
 					<select name="genre" id="genre">
 						<option>Genre</option>
 						<option value="adventure">Adventure</option>
@@ -35,16 +58,8 @@ const Featured = ({ type }) => {
 
 			{/* Content */}
 			<div className="featured__info">
-				<img
-					src="https://occ-0-1432-1433.1.nflxso.net/dnm/api/v6/LmEnxtiAuzezXBjYXPuDgfZ4zZQ/AAAABUZdeG1DrMstq-YKHZ-dA-cx2uQN_YbCYx7RABDk0y7F8ZK6nzgCz4bp5qJVgMizPbVpIvXrd4xMBQAuNe0xmuW2WjoeGMDn1cFO.webp?r=df1"
-					alt=""
-				/>
-				<span className="desc">
-					Lorem ipsum dolor sit amet consectetur adipisicing elit. Vitae
-					adipisci repellendus eum quasi illo, velit numquam, maxime tempora
-					sint deleniti, aliquid qui? Facilis, adipisci! Ratione hic repudiandae
-					temporibus eum earum?
-				</span>
+				<img src={title_img} alt="" />
+				<span className="desc">{desc}</span>
 
 				{/* Buttons */}
 				<div className="buttons">

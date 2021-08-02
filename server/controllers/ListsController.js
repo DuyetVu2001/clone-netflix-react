@@ -1,6 +1,6 @@
 const List = require('../models/List');
 
-//@ get --> /api/lists/ --> create list --> admin
+//@ get --> /api/lists/ -->  get random 10 lists --> private
 exports.getList = async (req, res) => {
 	const typeQuery = req.query.type;
 	const genreQuery = req.query.genre;

@@ -23,7 +23,7 @@ const Chart = ({ title, data, dataKey, grid }) => {
 						fontSize={16}
 						fontWeight={600}
 					/>
-					<YAxis />
+					<YAxis padding={{ top: 16 }} />
 					<Tooltip className="tool" wrapperStyle={{ fontSize: '1.6rem' }} />
 					<Line
 						type="monotone"

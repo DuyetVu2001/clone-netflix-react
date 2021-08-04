@@ -1,0 +1,61 @@
+.top-bar {
+	position: sticky;
+	top: 0;
+	z-index: 3;
+	width: 100%;
+
+	&__wrapper {
+		display: flex;
+		align-items: center;
+		justify-content: space-between;
+		height: var(--top-bar-height);
+		padding: 0 2.4rem;
+
+		color: var(--text-color);
+	}
+
+	&__left {
+		.logo {
+			font-size: 4rem;
+		}
+	}
+
+	&__right {
+		display: flex;
+		align-items: center;
+	}
+
+	&__icon {
+		position: relative;
+		margin-right: 2rem;
+		cursor: pointer;
+
+		& > .icon {
+			font-size: 2.8rem;
+		}
+
+		& > span {
+			position: absolute;
+			padding: 0 0.6rem;
+			top: -0.6rem;
+			right: -0.6rem;
+
+			border-radius: 50%;
+			font-size: 1.3rem;
+			font-weight: 600;
+
+			color: white;
+			background: red;
+		}
+	}
+
+	&__profile {
+		cursor: pointer;
+		img {
+			height: 4rem;
+			width: 4em;
+			border-radius: 50%;
+			object-fit: cover;
+		}
+	}
+}

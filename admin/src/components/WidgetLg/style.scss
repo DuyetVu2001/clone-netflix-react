@@ -1,0 +1,70 @@
+.widget-lg {
+	flex: 2;
+	margin-left: 1.6rem;
+	padding: 1.6rem 3.2rem;
+	border-radius: 0.8rem;
+
+	box-shadow: var(--box-shadow);
+
+	h4 {
+		text-transform: capitalize;
+		font-size: var(--title-size);
+		margin-bottom: 0.4rem;
+	}
+
+	&__table {
+		width: 100%;
+		font-size: 1.8rem;
+		border-spacing: 1.6rem;
+
+		td {
+			color: var(--text-color);
+		}
+
+		th {
+			text-align: left;
+		}
+	}
+
+	&__user {
+		display: flex;
+		align-items: center;
+		font-weight: 600;
+
+		img {
+			width: 3.8rem;
+			height: 3.8rem;
+			margin-right: 1.2rem;
+
+			border-radius: 50%;
+			object-fit: cover;
+		}
+
+		span {
+			color: #000;
+		}
+	}
+
+	&__btn {
+		padding: 0.6rem 1.2rem;
+		border-radius: 0.8rem;
+		border: none;
+		font-size: 1.5rem;
+		font-weight: 600;
+
+		&.Approved {
+			background-color: #e5faf2;
+			color: #3bb077;
+		}
+
+		&.Declined {
+			background-color: #fff0f1;
+			color: #d95087;
+		}
+
+		&.Pending {
+			background-color: #ebf1fe;
+			color: #2a7ade;
+		}
+	}
+}

@@ -1,35 +1,51 @@
-import { BrowserRouter as Router, Route, Switch } from 'react-router-dom';
+import { useContext } from 'react';
+import {
+	BrowserRouter as Router,
+	Redirect,
+	Route,
+	Switch,
+} from 'react-router-dom';
 import './App.scss';
 import SideBar from './components/SideBar';
 import TopBar from './components/TopBar';
+import { AuthContext } from './context/authContext/AuthContext';
 import Home from './pages/Home';
+import Login from './pages/Login';
 import Users from './pages/Users';
 
 function App() {
+	const { user } = useContext(AuthContext);
+
 	return (
 		<Router>
-			<div className="app">
-				<TopBar />
+			<Switch>
+				<div className="app">
+					<Route path="/login">{user ? <Redirect to="/" /> : <Login />}</Route>
 
-				<div className="app__container">
-					{/* Left side bar */}
-					<div className="app__side-bar">
-						<SideBar />
-					</div>
+					{user && (
+						<>
+							<TopBar />
 
-					{/* Pages */}
-					<div className="app__pages">
-						<Switch>
-							<Route path="/users">
-								<Users />
-							</Route>
-							<Route path="/">
-								<Home />
-							</Route>
-						</Switch>
-					</div>
+							<div className="app__container">
+								{/* Left side bar */}
+								<div className="app__side-bar">
+									<SideBar />
+								</div>
+
+								{/* Pages */}
+								<div className="app__pages">
+									<Route path="/users">
+										<Users />
+									</Route>
+									<Route path="/">
+										<Home />
+									</Route>
+								</div>
+							</div>
+						</>
+					)}
 				</div>
-			</div>
+			</Switch>
 		</Router>
 	);
 }

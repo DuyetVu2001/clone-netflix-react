@@ -37,7 +37,7 @@ const Home = () => {
 					},
 				});
 
-				const statsList = res.data.sort(function (a, b) {
+				const statsList = res.data.user.sort(function (a, b) {
 					return a._id - b._id;
 				});
 

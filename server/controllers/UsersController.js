@@ -6,12 +6,12 @@ const dotenv = require('dotenv');
 dotenv.config();
 const { SECRET_KEY } = process.env;
 
-// @ get --> /api/users/ --> get all user --> admin
+// @ get --> /api/users/?new=true --> get new users --> admin
 exports.getAllUser = async (req, res) => {
 	if (req.user.is_admin) {
 		try {
 			const user = req.query.new
-				? await User.find().sort({ _id: -1 }).limit(3)
+				? await User.find().sort({ _id: -1 }).limit(5)
 				: await User.find();
 
 			if (!user) {
@@ -47,7 +47,7 @@ exports.getUser = async (req, res) => {
 // @ get --> /api/users/stats  --> get user stats --> admin
 exports.getUserStats = async (req, res) => {
 	try {
-		const data = await User.aggregate([
+		const userStats = await User.aggregate([
 			{
 				$project: {
 					month: { $month: '$createdAt' },
@@ -60,9 +60,9 @@ exports.getUserStats = async (req, res) => {
 				},
 			},
 		]);
-		res.status(200).json(data);
-	} catch (err) {
-		res.status(500).json(err);
+		res.status(200).json({ success: true, user: userStats });
+	} catch (error) {
+		res.status(500).json({ success: false, error });
 	}
 };
 

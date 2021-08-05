@@ -1,7 +1,11 @@
 import { createContext, useEffect, useReducer } from 'react';
-import { loginSuccess } from './AuthActions';
 import AuthReducer from './AuthReducer';
-import { INIT_STATE } from './const';
+
+const INIT_STATE = {
+	user: JSON.parse(localStorage.getItem('user')) || null,
+	isLoading: false,
+	error: false,
+};
 
 export const AuthContext = createContext(INIT_STATE);
 
@@ -17,6 +21,7 @@ const AuthContextProvider = ({ children }) => {
 			value={{
 				user: state.user,
 				isLoading: state.isLoading,
+				error: state.error,
 				dispatch,
 			}}
 		>

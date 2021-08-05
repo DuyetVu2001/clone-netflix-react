@@ -1,4 +1,9 @@
-import { LOGIN_FAILURE, LOGIN_START, LOGIN_SUCCESS, LOGOUT } from './const';
+import {
+	LOGIN_FAILURE,
+	LOGIN_START,
+	LOGIN_SUCCESS,
+	LOGOUT,
+} from '../contextConst';
 
 const AuthReducer = (state, action) => {
 	const { type, payload } = action;
@@ -6,15 +11,14 @@ const AuthReducer = (state, action) => {
 	switch (type) {
 		case LOGIN_START: {
 			return {
-				...state,
 				user: null,
 				isLoading: true,
+				error: false,
 			};
 		}
 
 		case LOGIN_SUCCESS: {
 			return {
-				...state,
 				user: payload,
 				isLoading: false,
 				error: false,
@@ -23,7 +27,6 @@ const AuthReducer = (state, action) => {
 
 		case LOGIN_FAILURE: {
 			return {
-				...state,
 				user: null,
 				isLoading: false,
 				error: true,
@@ -32,8 +35,9 @@ const AuthReducer = (state, action) => {
 
 		case LOGOUT: {
 			return {
-				...state,
 				user: null,
+				isLoading: false,
+				error: false,
 			};
 		}
 

@@ -1,4 +1,9 @@
-import { LOGIN_FAILURE, LOGIN_START, LOGIN_SUCCESS, LOGOUT } from './const';
+import {
+	LOGIN_FAILURE,
+	LOGIN_START,
+	LOGIN_SUCCESS,
+	LOGOUT,
+} from '../contextConst';
 
 // login
 export const loginStart = () => ({

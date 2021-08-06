@@ -11,7 +11,7 @@ import TopBar from './components/TopBar';
 import { AuthContext } from './context/authContext/AuthContext';
 import Home from './pages/Home';
 import Login from './pages/Login';
-import Users from './pages/Users';
+import UserList from './pages/UserList';
 
 function App() {
 	const { user } = useContext(AuthContext);
@@ -35,7 +35,7 @@ function App() {
 								{/* Pages */}
 								<div className="app__pages">
 									<Route path="/users">
-										<Users />
+										<UserList />
 									</Route>
 									<Route path="/">
 										<Home />

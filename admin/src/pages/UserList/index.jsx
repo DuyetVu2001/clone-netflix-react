@@ -5,7 +5,7 @@ import { Link } from 'react-router-dom';
 import { userRows } from '../../dummyData';
 import './style.scss';
 
-const Users = () => {
+const UserList = () => {
 	const [data, setData] = useState(userRows);
 
 	const handleDelete = (id) => {
@@ -67,11 +67,11 @@ const Users = () => {
 				columns={columns}
 				disableSelectionOnClick
 				autoHeight
-				rowsPerPageOptions={[13]}
-				pageSize={13}
+				rowsPerPageOptions={[10]}
+				pageSize={10}
 			/>
 		</div>
 	);
 };
 
-export default Users;
+export default UserList;

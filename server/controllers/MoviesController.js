@@ -5,12 +5,15 @@ exports.getAllMovie = async (req, res) => {
 	if (req.user.is_admin) {
 		try {
 			const movies = await Movie.find();
-			res.status(200).json(movies.reverse());
+			res.status(200).json({ success: true, movies: movies.reverse() });
 		} catch (err) {
-			res.status(500).json(err);
+			res.status(500).json({ success: false, error });
 		}
 	} else {
-		res.status(403).json('You are not allowed!');
+		res.status(403).json({
+			success: false,
+			message: 'You are not allowed!',
+		});
 	}
 };
 

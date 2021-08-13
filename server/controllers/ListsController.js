@@ -1,29 +1,29 @@
 const List = require('../models/List');
 
 //@ get --> /api/lists/ -->  get random 10 lists --> private
-exports.getList = async (req, res) => {
+exports.getLists = async (req, res) => {
 	const typeQuery = req.query.type;
 	const genreQuery = req.query.genre;
-	let list = [];
+	let lists = [];
 
 	try {
 		if (typeQuery) {
 			if (genreQuery) {
-				list = await List.aggregate([
+				lists = await List.aggregate([
 					{ $sample: { size: 10 } },
 					{ $match: { type: typeQuery, genre: genreQuery } },
 				]);
 			} else {
-				list = await List.aggregate([
+				lists = await List.aggregate([
 					{ $sample: { size: 10 } },
 					{ $match: { type: typeQuery } },
 				]);
 			}
 		} else {
-			list = await List.aggregate([{ $sample: { size: 10 } }]);
+			lists = await List.aggregate([{ $sample: { size: 10 } }]);
 		}
-    
-		res.status(200).json({ success: true, list });
+
+		res.status(200).json({ success: true, lists });
 	} catch (err) {
 		res.status(500).json({ success: false, error });
 	}

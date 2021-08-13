@@ -11,7 +11,9 @@ import TopBar from './components/TopBar';
 import { AuthContext } from './context/authContext/AuthContext';
 import Home from './pages/Home';
 import Login from './pages/Login';
-import UserList from './pages/UserList';
+import Movie from './pages/Movie';
+import MovieList from './pages/MovieList';
+import NewMovie from './pages/NewMovie';
 
 function App() {
 	const { user } = useContext(AuthContext);
@@ -34,10 +36,17 @@ function App() {
 
 								{/* Pages */}
 								<div className="app__pages">
-									<Route path="/users">
-										<UserList />
+									<Route path="/new-movie">
+										<NewMovie />
 									</Route>
-									<Route path="/">
+									<Route path="/movie/:id">
+										<Movie />
+									</Route>
+									<Route path="/movies">
+										<MovieList />
+									</Route>
+
+									<Route exact path="/">
 										<Home />
 									</Route>
 								</div>

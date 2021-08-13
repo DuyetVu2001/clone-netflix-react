@@ -10,9 +10,12 @@ import SideBar from './components/SideBar';
 import TopBar from './components/TopBar';
 import { AuthContext } from './context/authContext/AuthContext';
 import Home from './pages/Home';
+import List from './pages/List';
+import ListList from './pages/ListList';
 import Login from './pages/Login';
 import Movie from './pages/Movie';
 import MovieList from './pages/MovieList';
+import NewList from './pages/NewList';
 import NewMovie from './pages/NewMovie';
 
 function App() {
@@ -36,6 +39,16 @@ function App() {
 
 								{/* Pages */}
 								<div className="app__pages">
+									<Route path="/new-list">
+										<NewList />
+									</Route>
+									<Route path="/list/:id">
+										<List />
+									</Route>
+									<Route path="/lists">
+										<ListList />
+									</Route>
+
 									<Route path="/new-movie">
 										<NewMovie />
 									</Route>

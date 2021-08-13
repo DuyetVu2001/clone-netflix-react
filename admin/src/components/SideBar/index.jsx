@@ -1,4 +1,8 @@
-import { LineStyle, PlayCircleOutline } from '@material-ui/icons';
+import {
+	FormatListBulleted,
+	LineStyle,
+	PlayCircleOutline,
+} from '@material-ui/icons';
 import { useState } from 'react';
 import { Link } from 'react-router-dom';
 import './style.scss';
@@ -37,6 +41,18 @@ const SideBar = () => {
 							>
 								<PlayCircleOutline className="side-bar__icon" />
 								Movies
+							</li>
+						</Link>
+
+						<Link to="/lists" className="link">
+							<li
+								className={
+									activeId === 2 ? 'side-bar__item active' : 'side-bar__item'
+								}
+								onClick={() => onClick(2)}
+							>
+								<FormatListBulleted className="side-bar__icon" />
+								Lists
 							</li>
 						</Link>
 					</ul>

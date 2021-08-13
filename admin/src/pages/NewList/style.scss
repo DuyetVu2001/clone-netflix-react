@@ -1,0 +1,58 @@
+.new-product {
+	h4 {
+		font-size: 3.2rem;
+	}
+
+	&__form {
+		display: flex;
+		flex-wrap: wrap;
+	}
+
+	&__item {
+		display: flex;
+		flex-direction: column;
+		width: 66rem;
+		margin-top: 1.2rem;
+		margin-right: 3.2rem;
+
+		& > input[type='file'] {
+			border: none;
+		}
+
+		& > label {
+			margin-bottom: 1.2rem;
+			margin-top: 0.6rem;
+			font-size: 1.8rem;
+			font-weight: 600;
+			color: rgb(151, 150, 150);
+		}
+
+		& > input {
+			font-size: 1.6rem;
+			padding: 1.6rem;
+			border: 0.1rem solid gray;
+			border-radius: 0.5rem;
+		}
+	}
+
+	&__select {
+		height: 4.8rem;
+		border-radius: 0.5rem;
+		font-size: 1.6rem;
+	}
+
+	&__create-btn {
+		margin-top: 3rem;
+		padding: 1.2rem 2rem;
+		width: 30rem;
+
+		border: none;
+		border-radius: 1rem;
+		font-size: 1.6rem;
+		font-weight: 700;
+
+		color: white;
+		background-color: darkblue;
+		cursor: pointer;
+	}
+}

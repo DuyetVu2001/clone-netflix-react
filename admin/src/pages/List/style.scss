@@ -1,0 +1,156 @@
+.list {
+	&__header {
+		display: flex;
+		justify-content: space-between;
+		align-items: center;
+
+		h4 {
+			font-size: 3.2rem;
+			font-weight: 600;
+		}
+
+		button {
+			border: none;
+			border-radius: 0.4rem;
+			padding: 1rem 2rem;
+
+			font-size: 1.6rem;
+			font-weight: 600;
+
+			color: white;
+			background: teal;
+			cursor: pointer;
+		}
+	}
+
+	&__info {
+		display: flex;
+	}
+
+	&__detail {
+		flex: 1;
+		padding: 1.8rem 2.2rem;
+		margin-top: 1.6rem;
+		border-radius: 0.8rem;
+		box-shadow: var(--box-shadow);
+
+		&-top {
+			display: flex;
+			align-items: center;
+			margin-bottom: 2rem;
+
+			img {
+				width: 4rem;
+				height: 4rem;
+				margin-right: 2rem;
+				border-radius: 50%;
+				object-fit: cover;
+			}
+
+			span {
+				font-size: 2rem;
+				font-weight: 600;
+			}
+		}
+
+		&-bottom {
+			margin-top: 1.6rem;
+		}
+
+		&-item {
+			display: flex;
+			justify-content: space-between;
+			width: 24rem;
+			padding: 0.4rem 0;
+			font-size: 1.8rem;
+
+			.key {
+				font-weight: 600;
+				margin-right: 1.6rem;
+			}
+
+			.value {
+				color: var(--text-color);
+			}
+		}
+	}
+
+	&__update {
+		margin-top: 1.6rem;
+		box-shadow: var(--box-shadow);
+		padding: 3rem 2.2rem;
+	}
+
+	&__update-form {
+		display: flex;
+		justify-content: space-between;
+		align-items: center;
+	}
+
+	&__form-left {
+		font-size: 1.8rem;
+		display: flex;
+		flex-direction: column;
+		width: 24rem;
+
+		label {
+			margin-bottom: 1.2rem;
+			margin-top: 1.2rem;
+			color: gray;
+			font-size: 2rem;
+		}
+
+		input {
+			font-size: 1.5rem;
+			margin-bottom: 1.2rem;
+			border: none;
+			padding: 0.6rem;
+			border-bottom: 1px solid gray;
+		}
+
+		select {
+			margin-bottom: 1.2rem;
+			font-size: 1.5rem;
+		}
+	}
+
+	&__form-right {
+		display: flex;
+		flex-direction: column;
+		justify-content: space-between;
+		margin-right: 8rem;
+
+		.upload {
+			display: flex;
+			align-items: center;
+
+			img {
+				width: 12rem;
+				height: 12rem;
+				object-fit: cover;
+				border-radius: 0.8rem;
+			}
+
+			.icon {
+				font-size: 2.8rem;
+				margin-left: 1.6rem;
+				cursor: pointer;
+			}
+		}
+	}
+
+	&__update-btn {
+		width: 16rem;
+		min-width: 12rem;
+
+		border: none;
+		padding: 1rem 2.4rem;
+		border-radius: 0.6rem;
+
+		font-size: 1.6rem;
+		font-weight: 600;
+		color: white;
+		background-color: darkblue;
+		cursor: pointer;
+	}
+}

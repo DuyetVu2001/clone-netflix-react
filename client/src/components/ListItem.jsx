@@ -16,12 +16,15 @@ const ListItem = ({ item }) => {
 	useEffect(() => {
 		const getMovie = async () => {
 			try {
-				const res = await axios.get(`${API_URL}/movies/find/${item}`, {
-					headers: {
-						token:
-							'Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6IjYxMDY1MTkyZWEzMGYyNWUzYzM4ZWY4MiIsImlzX2FkbWluIjp0cnVlLCJpYXQiOjE2Mjc4MDU3MzB9.ImMPHCSVMmr4ggbR8vZXMlNm9IMNVay9DuKTXFEmlmM',
-					},
-				});
+				const res = await axios.get(
+					`${API_URL}/movies/find/610682bdc41ede8f7cbb7e59`,
+					{
+						headers: {
+							token:
+								'Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6IjYxMDY1MTkyZWEzMGYyNWUzYzM4ZWY4MiIsImlzX2FkbWluIjp0cnVlLCJpYXQiOjE2Mjc4MDU3MzB9.ImMPHCSVMmr4ggbR8vZXMlNm9IMNVay9DuKTXFEmlmM',
+						},
+					}
+				);
 
 				setMovie(res.data.movie);
 			} catch (error) {
